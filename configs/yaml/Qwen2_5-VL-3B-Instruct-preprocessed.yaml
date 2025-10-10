@@ -13,16 +13,12 @@ freeze_multi_modal_projector: true
 freeze_language_model: false
 deepspeed: /project/aip-agrawal/huyle/projects/robospatial2/robospatial2-training/configs/ds_z3_config.json
 
-### dataset
+### dataset - Using preprocessed tokenized data for faster training startup
+tokenized_path: /project/6100855/huyle/projects/robospatial2/robospatial2-training/preprocessed_data/qwen2_5vl-3b-hope
+# Note: When using tokenized_path, the following dataset parameters are ignored:
+# dataset, eval_dataset, dataset_dir, template, cutoff_len, overwrite_cache, preprocessing_num_workers
+# But we still need media_dir for loading images
 media_dir: /project/aip-agrawal/huyle/projects/robospatial2/robospatial2-training/dataset
-dataset: hope_train
-eval_dataset: hope_val
-dataset_dir: data
-template: qwen2_vl
-cutoff_len: 2048
-# max_samples: 100392
-overwrite_cache: true
-preprocessing_num_workers: 40
 dataloader_num_workers: 8
 seed: 42
 

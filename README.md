@@ -169,16 +169,16 @@ NNODES=2 NODE_RANK=1 MASTER_ADDR=tg10604 MASTER_PORT=29500 bash train_distribute
 
 
   1. On the master node (rank 0):
-  NNODES=4 NODE_RANK=0 MASTER_ADDR=tg10602 MASTER_PORT=29500 bash train_distributed.sh
+NNODES=4 NODE_RANK=0 MASTER_ADDR=tg10601 MASTER_PORT=29500 bash train_distributed.sh
 
   2. On worker node 1 (rank 1):
-  NNODES=4 NODE_RANK=1 MASTER_ADDR=tg10602 MASTER_PORT=29500 bash train_distributed.sh
+NNODES=4 NODE_RANK=1 MASTER_ADDR=tg10601 MASTER_PORT=29500 bash train_distributed.sh
 
   3. On worker node 2 (rank 2):
-  NNODES=4 NODE_RANK=2 MASTER_ADDR=tg10602 MASTER_PORT=29500 bash train_distributed.sh
+NNODES=4 NODE_RANK=2 MASTER_ADDR=tg10601 MASTER_PORT=29500 bash train_distributed.sh
 
   4. On worker node 3 (rank 3):
-  NNODES=4 NODE_RANK=3 MASTER_ADDR=tg10602 MASTER_PORT=29500 bash train_distributed.sh
+NNODES=4 NODE_RANK=3 MASTER_ADDR=tg10601 MASTER_PORT=29500 bash train_distributed.sh
 
   Key points:
   - Set NNODES=4 on all nodes

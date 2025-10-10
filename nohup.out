@@ -1,0 +1,443 @@
+[0;32m============================================================[0m
+[0;32mRoboSpatial2 Data Preprocessing[0m
+[0;32m============================================================[0m
+
+[1;33mConfiguration:[0m
+  Config: /project/aip-agrawal/huyle/projects/robospatial2/robospatial2-training/configs/yaml/Qwen2_5-VL-3B-Instruct.yaml
+  Output: /project/aip-agrawal/huyle/projects/robospatial2/robospatial2-training/preprocessed_data/qwen2_5vl-3b-hope
+
+[0;32mStarting preprocessing...[0m
+[1;33mThis will tokenize the dataset and save it for faster training startup[0m
+
+[WARNING|2025-10-09 09:48:08] llamafactory.extras.misc:154 >> Version checking has been disabled, may lead to unexpected behaviors.
+================================================================================
+LLaMA-Factory Data Preprocessing Script
+================================================================================
+Config file: /project/aip-agrawal/huyle/projects/robospatial2/robospatial2-training/configs/yaml/Qwen2_5-VL-3B-Instruct.yaml
+Output directory: /project/aip-agrawal/huyle/projects/robospatial2/robospatial2-training/preprocessed_data/qwen2_5vl-3b-hope
+
+[1/5] Loading configuration...
+[INFO|2025-10-09 09:48:08] llamafactory.hparams.parser:415 >> Process rank: 0, world size: 1, device: cuda:0, distributed training: True, compute dtype: torch.bfloat16
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,664 >> loading file vocab.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/vocab.json
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,664 >> loading file merges.txt from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/merges.txt
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,664 >> loading file tokenizer.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/tokenizer.json
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,665 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,665 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,665 >> loading file tokenizer_config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:08,665 >> loading file chat_template.jinja from cache at None
+[INFO|tokenization_utils_base.py:2299] 2025-10-09 09:48:08,938 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|image_processing_base.py:380] 2025-10-09 09:48:09,074 >> loading configuration file preprocessor_config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/preprocessor_config.json
+[INFO|image_processing_base.py:380] 2025-10-09 09:48:09,137 >> loading configuration file preprocessor_config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/preprocessor_config.json
+[INFO|image_processing_base.py:433] 2025-10-09 09:48:09,155 >> Image processor Qwen2VLImageProcessorFast {
+  "crop_size": null,
+  "data_format": "channels_first",
+  "default_to_square": true,
+  "device": null,
+  "do_center_crop": null,
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.48145466,
+    0.4578275,
+    0.40821073
+  ],
+  "image_processor_type": "Qwen2VLImageProcessorFast",
+  "image_std": [
+    0.26862954,
+    0.26130258,
+    0.27577711
+  ],
+  "input_data_format": null,
+  "max_pixels": 12845056,
+  "merge_size": 2,
+  "min_pixels": 3136,
+  "patch_size": 14,
+  "processor_class": "Qwen2_5_VLProcessor",
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098,
+  "return_tensors": null,
+  "size": {
+    "longest_edge": 12845056,
+    "shortest_edge": 3136
+  },
+  "temporal_patch_size": 2
+}
+
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,253 >> loading file vocab.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/vocab.json
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,253 >> loading file merges.txt from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/merges.txt
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,254 >> loading file tokenizer.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/tokenizer.json
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,254 >> loading file added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,254 >> loading file special_tokens_map.json from cache at None
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,254 >> loading file tokenizer_config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2023] 2025-10-09 09:48:09,254 >> loading file chat_template.jinja from cache at None
+[INFO|tokenization_utils_base.py:2299] 2025-10-09 09:48:09,532 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[WARNING|logging.py:328] 2025-10-09 09:48:09,640 >> You have video processor config saved in `preprocessor.json` file which is deprecated. Video processor configs should be saved in their own `video_preprocessor.json` file. You can rename the file or load and save the processor back which renames it automatically. Loading from `preprocessor.json` will be removed in v5.0.
+[INFO|video_processing_utils.py:629] 2025-10-09 09:48:09,640 >> loading configuration file preprocessor_config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/preprocessor_config.json
+[INFO|configuration_utils.py:698] 2025-10-09 09:48:09,695 >> loading configuration file config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/config.json
+[INFO|configuration_utils.py:770] 2025-10-09 09:48:09,703 >> Model config Qwen2_5_VLConfig {
+  "architectures": [
+    "Qwen2_5_VLForConditionalGeneration"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 2048,
+  "image_token_id": 151655,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 128000,
+  "max_window_layers": 70,
+  "model_type": "qwen2_5_vl",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 36,
+  "num_key_value_heads": 2,
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": {
+    "mrope_section": [
+      16,
+      24,
+      24
+    ],
+    "rope_type": "default",
+    "type": "default"
+  },
+  "rope_theta": 1000000.0,
+  "sliding_window": 32768,
+  "text_config": {
+    "architectures": [
+      "Qwen2_5_VLForConditionalGeneration"
+    ],
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "hidden_act": "silu",
+    "hidden_size": 2048,
+    "image_token_id": null,
+    "initializer_range": 0.02,
+    "intermediate_size": 11008,
+    "max_position_embeddings": 128000,
+    "max_window_layers": 70,
+    "model_type": "qwen2_5_vl_text",
+    "num_attention_heads": 16,
+    "num_hidden_layers": 36,
+    "num_key_value_heads": 2,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": {
+      "mrope_section": [
+        16,
+        24,
+        24
+      ],
+      "rope_type": "default",
+      "type": "default"
+    },
+    "rope_theta": 1000000.0,
+    "sliding_window": 32768,
+    "tie_word_embeddings": true,
+    "torch_dtype": "bfloat16",
+    "use_cache": true,
+    "use_sliding_window": false,
+    "video_token_id": null,
+    "vision_end_token_id": 151653,
+    "vision_start_token_id": 151652,
+    "vision_token_id": 151654,
+    "vocab_size": 151936
+  },
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.52.4",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "video_token_id": 151656,
+  "vision_config": {
+    "depth": 32,
+    "fullatt_block_indexes": [
+      7,
+      15,
+      23,
+      31
+    ],
+    "hidden_act": "silu",
+    "hidden_size": 1280,
+    "in_channels": 3,
+    "in_chans": 3,
+    "initializer_range": 0.02,
+    "intermediate_size": 3420,
+    "model_type": "qwen2_5_vl",
+    "num_heads": 16,
+    "out_hidden_size": 2048,
+    "patch_size": 14,
+    "spatial_merge_size": 2,
+    "spatial_patch_size": 14,
+    "temporal_patch_size": 2,
+    "tokens_per_second": 2,
+    "window_size": 112
+  },
+  "vision_end_token_id": 151653,
+  "vision_start_token_id": 151652,
+  "vision_token_id": 151654,
+  "vocab_size": 151936
+}
+
+[INFO|video_processing_utils.py:629] 2025-10-09 09:48:09,812 >> loading configuration file preprocessor_config.json from cache at /scratch/h/huyle/.cache/huggingface/hub/models--Qwen--Qwen2.5-VL-3B-Instruct/snapshots/66285546d2b821cf421d4f5eb2576359d3770cd3/preprocessor_config.json
+[INFO|video_processing_utils.py:683] 2025-10-09 09:48:09,812 >> Video processor Qwen2VLVideoProcessor {
+  "_valid_kwargs_names": [
+    "do_convert_rgb",
+    "do_resize",
+    "size",
+    "size_divisor",
+    "default_to_square",
+    "resample",
+    "do_rescale",
+    "rescale_factor",
+    "do_normalize",
+    "image_mean",
+    "image_std",
+    "do_pad",
+    "do_center_crop",
+    "crop_size",
+    "data_format",
+    "input_data_format",
+    "device",
+    "min_pixels",
+    "max_pixels",
+    "patch_size",
+    "temporal_patch_size",
+    "merge_size"
+  ],
+  "crop_size": null,
+  "data_format": "channels_first",
+  "default_to_square": true,
+  "device": null,
+  "do_center_crop": null,
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "do_pad": null,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.48145466,
+    0.4578275,
+    0.40821073
+  ],
+  "image_processor_type": "Qwen2VLImageProcessor",
+  "image_std": [
+    0.26862954,
+    0.26130258,
+    0.27577711
+  ],
+  "input_data_format": null,
+  "max_pixels": 12845056,
+  "merge_size": 2,
+  "min_pixels": 3136,
+  "model_valid_processing_keys": [
+    "do_convert_rgb",
+    "do_resize",
+    "size",
+    "size_divisor",
+    "default_to_square",
+    "resample",
+    "do_rescale",
+    "rescale_factor",
+    "do_normalize",
+    "image_mean",
+    "image_std",
+    "do_pad",
+    "do_center_crop",
+    "crop_size",
+    "data_format",
+    "input_data_format",
+    "device",
+    "min_pixels",
+    "max_pixels",
+    "patch_size",
+    "temporal_patch_size",
+    "merge_size"
+  ],
+  "patch_size": 14,
+  "processor_class": "Qwen2_5_VLProcessor",
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098,
+  "size": {
+    "longest_edge": 12845056,
+    "shortest_edge": 3136
+  },
+  "size_divisor": null,
+  "temporal_patch_size": 2,
+  "video_processor_type": "Qwen2VLVideoProcessor"
+}
+
+[INFO|processing_utils.py:990] 2025-10-09 09:48:10,408 >> Processor Qwen2_5_VLProcessor:
+- image_processor: Qwen2VLImageProcessorFast {
+  "crop_size": null,
+  "data_format": "channels_first",
+  "default_to_square": true,
+  "device": null,
+  "do_center_crop": null,
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.48145466,
+    0.4578275,
+    0.40821073
+  ],
+  "image_processor_type": "Qwen2VLImageProcessorFast",
+  "image_std": [
+    0.26862954,
+    0.26130258,
+    0.27577711
+  ],
+  "input_data_format": null,
+  "max_pixels": 12845056,
+  "merge_size": 2,
+  "min_pixels": 3136,
+  "patch_size": 14,
+  "processor_class": "Qwen2_5_VLProcessor",
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098,
+  "return_tensors": null,
+  "size": {
+    "longest_edge": 12845056,
+    "shortest_edge": 3136
+  },
+  "temporal_patch_size": 2
+}
+
+- tokenizer: Qwen2TokenizerFast(name_or_path='Qwen/Qwen2.5-VL-3B-Instruct', vocab_size=151643, model_max_length=131072, is_fast=True, padding_side='right', truncation_side='right', special_tokens={'eos_token': '<|im_end|>', 'pad_token': '<|endoftext|>', 'additional_special_tokens': ['<|im_start|>', '<|im_end|>', '<|object_ref_start|>', '<|object_ref_end|>', '<|box_start|>', '<|box_end|>', '<|quad_start|>', '<|quad_end|>', '<|vision_start|>', '<|vision_end|>', '<|vision_pad|>', '<|image_pad|>', '<|video_pad|>']}, clean_up_tokenization_spaces=False, added_tokens_decoder={
+	151643: AddedToken("<|endoftext|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151644: AddedToken("<|im_start|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151645: AddedToken("<|im_end|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151646: AddedToken("<|object_ref_start|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151647: AddedToken("<|object_ref_end|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151648: AddedToken("<|box_start|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151649: AddedToken("<|box_end|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151650: AddedToken("<|quad_start|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151651: AddedToken("<|quad_end|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151652: AddedToken("<|vision_start|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151653: AddedToken("<|vision_end|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151654: AddedToken("<|vision_pad|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151655: AddedToken("<|image_pad|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151656: AddedToken("<|video_pad|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151657: AddedToken("<tool_call>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151658: AddedToken("</tool_call>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151659: AddedToken("<|fim_prefix|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151660: AddedToken("<|fim_middle|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151661: AddedToken("<|fim_suffix|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151662: AddedToken("<|fim_pad|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151663: AddedToken("<|repo_name|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+	151664: AddedToken("<|file_sep|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=False),
+}
+)
+- video_processor: Qwen2VLVideoProcessor {
+  "_valid_kwargs_names": [
+    "do_convert_rgb",
+    "do_resize",
+    "size",
+    "size_divisor",
+    "default_to_square",
+    "resample",
+    "do_rescale",
+    "rescale_factor",
+    "do_normalize",
+    "image_mean",
+    "image_std",
+    "do_pad",
+    "do_center_crop",
+    "crop_size",
+    "data_format",
+    "input_data_format",
+    "device",
+    "min_pixels",
+    "max_pixels",
+    "patch_size",
+    "temporal_patch_size",
+    "merge_size"
+  ],
+  "crop_size": null,
+  "data_format": "channels_first",
+  "default_to_square": true,
+  "device": null,
+  "do_center_crop": null,
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "do_pad": null,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.48145466,
+    0.4578275,
+    0.40821073
+  ],
+  "image_processor_type": "Qwen2VLImageProcessor",
+  "image_std": [
+    0.26862954,
+    0.26130258,
+    0.27577711
+  ],
+  "input_data_format": null,
+  "max_pixels": 12845056,
+  "merge_size": 2,
+  "min_pixels": 3136,
+  "model_valid_processing_keys": [
+    "do_convert_rgb",
+    "do_resize",
+    "size",
+    "size_divisor",
+    "default_to_square",
+    "resample",
+    "do_rescale",
+    "rescale_factor",
+    "do_normalize",
+    "image_mean",
+    "image_std",
+    "do_pad",
+    "do_center_crop",
+    "crop_size",
+    "data_format",
+    "input_data_format",
+    "device",
+    "min_pixels",
+    "max_pixels",
+    "patch_size",
+    "temporal_patch_size",
+    "merge_size"
+  ],
+  "patch_size": 14,
+  "processor_class": "Qwen2_5_VLProcessor",
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098,
+  "size": {
+    "longest_edge": 12845056,
+    "shortest_edge": 3136
+  },
+  "size_divisor": null,
+  "temporal_patch_size": 2,
+  "video_processor_type": "Qwen2VLVideoProcessor"
+}
+
+
+{
+  "processor_class": "Qwen2_5_VLProcessor"
+}
+
+  Model: Qwen/Qwen2.5-VL-3B-Instruct
+  Stage: sft
+  Dataset: ['hope_train']
+  Eval Dataset: ['hope_val']
+
+[2/5] Loading tokenizer and processor...
+
+[3/5] Loading template...
+
+[4/5] Loading and tokenizing dataset...
+  This may take a while depending on dataset size...
+  Using 40 workers for preprocessing
+[INFO|2025-10-09 09:48:10] llamafactory.data.loader:143 >> Loading dataset hope_train.json...
+Converting format of dataset (num_proc=40):   0%|          | 0/2083209 [00:00<?, ? examples/s]Converting format of dataset (num_proc=40):   0%|          | 699/2083209 [00:00<08:44, 3974.01 examples/s]Converting format of dataset (num_proc=40):   2%|▏         | 51945/2083209 [00:00<00:08, 230445.29 examples/s]Converting format of dataset (num_proc=40):   5%|▌         | 108971/2083209 [00:00<00:05, 362426.41 examples/s]Converting format of dataset (num_proc=40):   8%|▊         | 163521/2083209 [00:00<00:04, 427657.03 examples/s]Converting format of dataset (num_proc=40):  11%|█         | 220020/2083209 [00:00<00:03, 474017.55 examples/s]Converting format of dataset (num_proc=40):  13%|█▎        | 276747/2083209 [00:00<00:03, 504269.09 examples/s]Converting format of dataset (num_proc=40):  16%|█▌        | 331232/2083209 [00:00<00:03, 514866.31 examples/s]Converting format of dataset (num_proc=40):  19%|█▊        | 389363/2083209 [00:00<00:03, 531935.03 examples/s]Converting format of dataset (num_proc=40):  21%|██▏       | 444026/2083209 [00:00<00:03, 533799.05 examples/s]Converting format of dataset (num_proc=40):  24%|██▍       | 498713/2083209 [00:01<00:02, 537699.93 examples/s]Converting format of dataset (num_proc=40):  27%|██▋       | 553600/2083209 [00:01<00:02, 522049.37 examples/s]Converting format of dataset (num_proc=40):  29%|██▉       | 606497/2083209 [00:01<00:02, 517436.16 examples/s]Converting format of dataset (num_proc=40):  32%|███▏      | 662712/2083209 [00:01<00:02, 530220.37 examples/s]Converting format of dataset (num_proc=40):  35%|███▍      | 719007/2083209 [00:01<00:02, 539573.05 examples/s]Converting format of dataset (num_proc=40):  37%|███▋      | 774506/2083209 [00:01<00:02, 543727.57 examples/s]Converting format of dataset (num_proc=40):  40%|███▉      | 831381/2083209 [00:01<00:02, 550857.70 examples/s]Converting format of dataset (num_proc=40):  43%|████▎     | 887355/2083209 [00:01<00:02, 553293.30 examples/s]Converting format of dataset (num_proc=40):  45%|████▌     | 943451/2083209 [00:01<00:02, 537429.42 examples/s]Converting format of dataset (num_proc=40):  48%|████▊     | 1000619/2083209 [00:02<00:01, 546289.26 examples/s]Converting format of dataset (num_proc=40):  51%|█████     | 1056288/2083209 [00:02<00:01, 549105.84 examples/s]Converting format of dataset (num_proc=40):  53%|█████▎    | 1111499/2083209 [00:02<00:01, 543594.44 examples/s]Converting format of dataset (num_proc=40):  56%|█████▌    | 1166583/2083209 [00:02<00:01, 524659.41 examples/s]Converting format of dataset (num_proc=40):  59%|█████▊    | 1219280/2083209 [00:02<00:01, 463538.17 examples/s]Converting format of dataset (num_proc=40):  61%|██████    | 1267140/2083209 [00:02<00:01, 452394.28 examples/s]Converting format of dataset (num_proc=40):  63%|██████▎   | 1313550/2083209 [00:02<00:02, 358321.78 examples/s]Converting format of dataset (num_proc=40):  65%|██████▍   | 1353335/2083209 [00:02<00:02, 335809.95 examples/s]Converting format of dataset (num_proc=40):  68%|██████▊   | 1406506/2083209 [00:03<00:01, 381263.19 examples/s]Converting format of dataset (num_proc=40):  70%|███████   | 1461887/2083209 [00:03<00:01, 422511.81 examples/s]Converting format of dataset (num_proc=40):  73%|███████▎  | 1518296/2083209 [00:03<00:01, 459016.53 examples/s]Converting format of dataset (num_proc=40):  76%|███████▌  | 1574231/2083209 [00:03<00:01, 486220.35 examples/s]Converting format of dataset (num_proc=40):  78%|███████▊  | 1630353/2083209 [00:03<00:00, 507120.80 examples/s]Converting format of dataset (num_proc=40):  81%|████████  | 1686620/2083209 [00:03<00:00, 522892.99 examples/s]Converting format of dataset (num_proc=40):  84%|████████▎ | 1742292/2083209 [00:03<00:00, 532638.93 examples/s]Converting format of dataset (num_proc=40):  86%|████████▋ | 1798305/2083209 [00:03<00:00, 540594.33 examples/s]Converting format of dataset (num_proc=40):  89%|████████▉ | 1853200/2083209 [00:03<00:00, 530298.81 examples/s]Converting format of dataset (num_proc=40):  92%|█████████▏| 1908326/2083209 [00:03<00:00, 536118.23 examples/s]Converting format of dataset (num_proc=40):  94%|█████████▍| 1964834/2083209 [00:04<00:00, 544504.84 examples/s]Converting format of dataset (num_proc=40):  97%|█████████▋| 2019998/2083209 [00:04<00:00, 508663.50 examples/s]Converting format of dataset (num_proc=40):  99%|█████████▉| 2072109/2083209 [00:04<00:00, 417380.42 examples/s]Converting format of dataset (num_proc=40): 100%|██████████| 2083209/2083209 [00:04<00:00, 458966.69 examples/s]
+[INFO|2025-10-09 09:48:15] llamafactory.data.loader:143 >> Loading dataset hope_val.json...
+Converting format of dataset (num_proc=40):   0%|          | 0/34015 [00:00<?, ? examples/s]Converting format of dataset (num_proc=40):  30%|███       | 10328/34015 [00:00<00:00, 102851.46 examples/s]Converting format of dataset (num_proc=40): 100%|██████████| 34015/34015 [00:00<00:00, 129911.31 examples/s]
+Running tokenizer on dataset (num_proc=40):   0%|          | 0/2083209 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 1000/2083209 [12:17<426:24:41,  1.36 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 2000/2083209 [19:40<326:09:44,  1.77 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 3000/2083209 [27:11<296:14:08,  1.95 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 4000/2083209 [34:03<273:05:13,  2.11 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 5000/2083209 [35:13<189:01:16,  3.05 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 5000/2083209 [35:24<189:01:16,  3.05 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 6000/2083209 [42:07<206:01:06,  2.80 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 7000/2083209 [44:07<161:08:03,  3.58 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 8000/2083209 [45:16<122:32:23,  4.70 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 8000/2083209 [45:34<122:32:23,  4.70 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 9000/2083209 [48:26<118:25:08,  4.87 examples/s]Running tokenizer on dataset (num_proc=40):   0%|          | 10000/2083209 [50:06<99:37:48,  5.78 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 11000/2083209 [50:12<70:01:25,  8.22 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 11000/2083209 [50:24<70:01:25,  8.22 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 12000/2083209 [51:07<58:25:24,  9.85 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 12000/2083209 [51:24<58:25:24,  9.85 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 13000/2083209 [53:23<64:25:06,  8.93 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 14000/2083209 [54:20<54:48:30, 10.49 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 14000/2083209 [54:34<54:48:30, 10.49 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 15000/2083209 [56:03<56:02:15, 10.25 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 16000/2083209 [59:32<75:25:10,  7.61 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 17000/2083209 [1:01:43<75:15:38,  7.63 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 18000/2083209 [1:02:38<62:08:25,  9.23 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 18000/2083209 [1:02:55<62:08:25,  9.23 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 19000/2083209 [1:03:25<51:28:04, 11.14 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 19000/2083209 [1:03:45<51:28:04, 11.14 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 20000/2083209 [1:04:07<43:16:50, 13.24 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 20000/2083209 [1:04:25<43:16:50, 13.24 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 21000/2083209 [1:05:14<41:48:59, 13.70 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 22000/2083209 [1:05:24<30:58:14, 18.49 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 22000/2083209 [1:05:35<30:58:14, 18.49 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 23000/2083209 [1:05:38<24:01:56, 23.81 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 23000/2083209 [1:05:55<24:01:56, 23.81 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 24000/2083209 [1:06:05<21:27:56, 26.65 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 24000/2083209 [1:06:25<21:27:56, 26.65 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 25000/2083209 [1:06:59<24:13:45, 23.60 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 26000/2083209 [1:07:03<17:42:08, 32.28 examples/s]Running tokenizer on dataset (num_proc=40):   1%|          | 26000/2083209 [1:07:15<17:42:08, 32.28 examples/s]Running tokenizer on dataset (num_proc=40):   1%|▏         | 27000/2083209 [1:07:15<14:27:25, 39.51 examples/s]Running tokenizer on dataset (num_proc=40):   1%|▏         | 28000/2083209 [1:07:17<10:20:56, 55.16 examples/s]Running tokenizer on dataset (num_proc=40):   1%|▏         | 28000/2083209 [1:07:35<10:20:56, 55.16 examples/s]Running tokenizer on dataset (num_proc=40):   1%|▏         | 29000/2083209 [1:07:48<12:39:30, 45.08 examples/s]Running tokenizer on dataset (num_proc=40):   1%|▏         | 30000/2083209 [1:07:50<9:12:58, 61.88 examples/s] Running tokenizer on dataset (num_proc=40):   1%|▏         | 31000/2083209 [1:07:57<7:29:05, 76.16 examples/s]Running tokenizer on dataset (num_proc=40):   1%|▏         | 31000/2083209 [1:08:15<7:29:05, 76.16 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 32000/2083209 [1:08:17<8:39:22, 65.82 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 33000/2083209 [1:08:32<8:37:24, 66.04 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 33000/2083209 [1:08:45<8:37:24, 66.04 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 34000/2083209 [1:09:00<10:52:06, 52.37 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 35000/2083209 [1:09:12<9:38:05, 59.05 examples/s] Running tokenizer on dataset (num_proc=40):   2%|▏         | 36000/2083209 [1:09:12<6:45:31, 84.14 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 37000/2083209 [1:09:12<4:45:38, 119.39 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 38000/2083209 [1:09:22<4:56:22, 115.01 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 39000/2083209 [1:09:26<4:11:39, 135.38 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 40000/2083209 [1:09:41<5:28:08, 103.78 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 41000/2083209 [1:09:48<5:06:27, 111.07 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 42000/2083209 [1:09:55<4:41:48, 120.72 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 43000/2083209 [1:09:58<3:49:19, 148.27 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 44000/2083209 [1:10:01<3:11:23, 177.58 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 45000/2083209 [1:10:03<2:34:31, 219.84 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 45000/2083209 [1:10:15<2:34:31, 219.84 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 46000/2083209 [1:10:20<4:41:37, 120.56 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 47000/2083209 [1:10:21<3:28:20, 162.90 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 47000/2083209 [1:10:35<3:28:20, 162.90 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 48000/2083209 [1:10:54<8:02:13, 70.34 examples/s] Running tokenizer on dataset (num_proc=40):   2%|▏         | 48000/2083209 [1:11:05<8:02:13, 70.34 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 49000/2083209 [1:11:45<14:15:48, 39.62 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 50000/2083209 [1:11:50<10:46:29, 52.42 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 50000/2083209 [1:12:05<10:46:29, 52.42 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 51000/2083209 [1:16:23<53:49:07, 10.49 examples/s]Running tokenizer on dataset (num_proc=40):   2%|▏         | 52000/2083209 [1:19:02<64:36:02,  8.73 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 53000/2083209 [1:21:24<69:04:53,  8.16 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 54000/2083209 [1:25:56<94:22:37,  5.97 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 55000/2083209 [1:31:34<123:15:28,  4.57 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 56000/2083209 [1:35:17<123:49:54,  4.55 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 57000/2083209 [1:38:36<120:09:39,  4.68 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 58000/2083209 [1:41:09<109:54:43,  5.12 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 59000/2083209 [1:42:36<91:34:09,  6.14 examples/s] Running tokenizer on dataset (num_proc=40):   3%|▎         | 59000/2083209 [1:42:55<91:34:09,  6.14 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 60000/2083209 [1:43:10<69:53:14,  8.04 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 61000/2083209 [1:43:13<49:19:33, 11.39 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 61000/2083209 [1:43:25<49:19:33, 11.39 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 62000/2083209 [1:45:36<58:37:01,  9.58 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 63000/2083209 [1:49:13<77:38:26,  7.23 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 64000/2083209 [1:50:27<66:46:46,  8.40 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 64000/2083209 [1:50:46<66:46:46,  8.40 examples/s]Running tokenizer on dataset (num_proc=40):   3%|▎         | 65000/2083209 [1:53:17<75:19:46,  7.44 examples/s]Terminated
